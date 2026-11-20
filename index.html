@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <span class="site-title">My Dashboard</span>
+    <button id="theme-toggle" class="btn-icon" aria-label="Toggle light/dark mode">🌙</button>
+  </header>
+
+  <!-- ===== MAIN GRID ===== -->
+  <main class="dashboard">
+
+    <!-- GREETING WIDGET -->
+    <section class="widget widget--greeting" id="widget-greeting">
+      <div class="greeting-text">
+        <p id="greeting-salutation" class="greeting-salutation">Good morning</p>
+        <p id="greeting-name" class="greeting-name">Friend</p>
+      </div>
+      <div class="greeting-clock">
+        <p id="greeting-time" class="clock-time">00:00:00</p>
+        <p id="greeting-date" class="clock-date">Loading…</p>
+      </div>
+      <form id="name-form" class="name-form" autocomplete="off">
+        <input id="name-input" class="input" type="text" placeholder="Your name…" maxlength="40" />
+        <button type="submit" class="btn btn--small">Save</button>
+      </form>
+      <p id="name-error" class="error-msg" aria-live="polite"></p>
+    </section>
+
+    <!-- FOCUS TIMER WIDGET -->
+    <section class="widget widget--timer" id="widget-timer">
+      <h2 class="widget-title">Focus Timer</h2>
+      <p id="timer-display" class="timer-display">25:00</p>
+      <p id="timer-message" class="timer-message hidden">✅ Session complete! Take a break.</p>
+      <div class="timer-controls">
+        <button id="timer-start" class="btn">Start</button>
+        <button id="timer-stop"  class="btn">Stop</button>
+        <button id="timer-reset" class="btn btn--outline">Reset</button>
+      </div>
+      <form id="timer-duration-form" class="duration-form" autocomplete="off">
+        <label for="duration-input" class="label">Duration (min)</label>
+        <input id="duration-input" class="input input--narrow" type="number" min="1" max="120" placeholder="25" />
+        <button type="submit" class="btn btn--small">Set</button>
+      </form>
+      <p id="duration-error" class="error-msg" aria-live="polite"></p>
+    </section>
+
+    <!-- TODO LIST WIDGET -->
+    <section class="widget widget--todo" id="widget-todo">
+      <h2 class="widget-title">To-Do List</h2>
+      <form id="task-form" class="task-form" autocomplete="off">
+        <input id="task-input" class="input" type="text" placeholder="Add a task…" maxlength="200" />
+        <button type="submit" class="btn">Add</button>
+      </form>
+      <p id="task-error" class="error-msg" aria-live="polite"></p>
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+
+    <!-- QUICK LINKS WIDGET -->
+    <section class="widget widget--links" id="widget-links">
+      <h2 class="widget-title">Quick Links</h2>
+      <form id="link-form" class="link-form" autocomplete="off">
+        <input id="link-name-input"  class="input" type="text" placeholder="Label…"  maxlength="40" />
+        <input id="link-url-input"   class="input" type="url"  placeholder="https://…" maxlength="300" />
+        <button type="submit" class="btn">Add</button>
+      </form>
+      <p id="link-error" class="error-msg" aria-live="polite"></p>
+      <div id="link-list" class="link-list"></div>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
